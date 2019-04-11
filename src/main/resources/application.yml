@@ -1,0 +1,4 @@
+eureka:
+  client:
+    register-with-eureka: false  # 当前微服务不注册到eureka中(消费端)
+    fetch-registry: false

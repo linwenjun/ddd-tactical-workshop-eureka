@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: eureka-server
+spec:
+  rules:
+  - host: eureka.ddd.school.thoughtworks.cn
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: eureka-server
+          servicePort: 8080
