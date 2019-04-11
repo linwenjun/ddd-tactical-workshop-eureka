@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-set -e
-
 SERVER_NAME=eureka-server
 
 ./gradlew build
