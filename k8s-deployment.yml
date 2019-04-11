@@ -1,31 +1,31 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: eureka-service
+  name: eureka-server
   labels:
-    app: eureka-service
+    app: eureka-server
 spec:
   ports:
   - port: 8080
     name: http
   selector:
-    app: eureka-service
+    app: eureka-server
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: eureka-service
+  name: eureka-server
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: eureka-service
+        app: eureka-server
         version: v2
     spec:
       containers:
-      - name: eureka-service
-        image: 076880417388.dkr.ecr.cn-northwest-1.amazonaws.com.cn/eureka-service:latest
+      - name: eureka-server
+        image: 076880417388.dkr.ecr.cn-northwest-1.amazonaws.com.cn/eureka-server:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
